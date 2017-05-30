@@ -17,12 +17,12 @@ import { RegisterPage } from '../pages/register/register';
 import { AngularFireModule } from 'angularFire2';
 
  var config = {
-    apiKey: "AIzaSyCWIcoASInNEMM5Zq5GxHbyjb39ukawh5E",
-    authDomain: "jokesfeed-f1d48.firebaseapp.com",
-    databaseURL: "https://jokesfeed-f1d48.firebaseio.com",
-    projectId: "jokesfeed-f1d48",
-    storageBucket: "jokesfeed-f1d48.appspot.com",
-    messagingSenderId: "536997009354"
+    apiKey: “”,
+    authDomain: "",
+    databaseURL: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: ""
   };  
 @NgModule({
   declarations: [

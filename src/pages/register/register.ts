@@ -23,13 +23,13 @@ public username:string = '';
 public password:string = '';
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 //  var config = {
-//     apiKey: "AIzaSyCWIcoASInNEMM5Zq5GxHbyjb39ukawh5E",
-//     authDomain: "jokesfeed-f1d48.firebaseapp.com",
-//     databaseURL: "https://jokesfeed-f1d48.firebaseio.com",
-//     projectId: "jokesfeed-f1d48",
-//     storageBucket: "jokesfeed-f1d48.appspot.com",
-//     messagingSenderId: "536997009354"
-//   }; 
+//     apiKey: “”,
+//     authDomain: "",
+//     databaseURL: "",
+//     projectId: "",
+//     storageBucket: "",
+//     messagingSenderId: ""
+//   };  
     //   firebase.initializeApp(config);
 
   }
