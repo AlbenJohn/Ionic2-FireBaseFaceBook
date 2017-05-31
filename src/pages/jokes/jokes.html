@@ -10,12 +10,19 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>
-      Ionic Blank
+Jokes
     </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="moveaddPage()"><ion-icon name="add-circle-outline"></ion-icon></button>
+      </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
 Jokes Page
+
+<ion-card color='light' *ngFor="let JokesArr of JokeList | async">
+  <ion-card-content>{{JokesArr.Jokes}}</ion-card-content>
+</ion-card>
 </ion-content>

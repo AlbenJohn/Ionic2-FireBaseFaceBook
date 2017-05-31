@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AddjokesPage } from '../addjokes/addjokes';
+import { FIREBASE_PROVIDERS, defaultFirebase,AngularFire,FirebaseListObservable } from 'angularFire2';
 
 /**
  * Generated class for the JokesPage page.
@@ -13,12 +15,22 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'jokes.html',
 })
 export class JokesPage {
+    JokeList: FirebaseListObservable<any>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,fb:AngularFire) {
+
+            this.JokeList = fb.database.list('/JokeList');
+
   }
-
+      convertoArray(val)
+           {
+           return Array.from(val);
+           }
   ionViewDidLoad() {
     console.log('ionViewDidLoad JokesPage');
   }
-
+    moveaddPage()
+    {
+             this.navCtrl.push(AddjokesPage)
+    }
 }

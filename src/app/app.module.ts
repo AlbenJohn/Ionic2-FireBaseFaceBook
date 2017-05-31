@@ -13,16 +13,18 @@ import { JokesPage } from '../pages/jokes/jokes';
 import { ProfilePage } from '../pages/profile/profile';
 import { LogoutPage } from '../pages/logout/logout';
 import { RegisterPage } from '../pages/register/register';
+import { AddjokesPage } from '../pages/addjokes/addjokes';
 
 import { AngularFireModule } from 'angularFire2';
+import { AdMob } from '@ionic-native/admob';
 
  var config = {
-    apiKey: “”,
-    authDomain: "",
-    databaseURL: "",
-    projectId: "",
-    storageBucket: "",
-    messagingSenderId: ""
+    apiKey: "AIzaSyCWIcoASInNEMM5Zq5GxHbyjb39ukawh5E",
+    authDomain: "jokesfeed-f1d48.firebaseapp.com",
+    databaseURL: "https://jokesfeed-f1d48.firebaseio.com",
+    projectId: "jokesfeed-f1d48",
+    storageBucket: "jokesfeed-f1d48.appspot.com",
+    messagingSenderId: "536997009354"
   };  
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import { AngularFireModule } from 'angularFire2';
     ProfilePage,
     LogoutPage,
     RegisterPage,
+    AddjokesPage,
 
   ],
   imports: [
@@ -52,11 +55,13 @@ import { AngularFireModule } from 'angularFire2';
     ProfilePage,
     LogoutPage,
     RegisterPage,
+    AddjokesPage,
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AdMob
   ]
 })
 export class AppModule {}
