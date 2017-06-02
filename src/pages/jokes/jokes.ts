@@ -22,7 +22,7 @@ export class JokesPage {
             this.JokeList = fb.database.list('/JokeList');
 
   }
-      convertoArray(val)
+           convertoArray(val)
            {
            return Array.from(val);
            }
@@ -31,6 +31,23 @@ export class JokesPage {
   }
     moveaddPage()
     {
-             this.navCtrl.push(AddjokesPage)
+             this.navCtrl.push(AddjokesPage);
+    }
+
+    addLikes(){
+      //console.log(this.JokeList.Likes);
+this.JokeList.push({
+        Likes: 1,
+      
+      }).then( newContact => {
+
+
+      }, error => {
+       console.log(error);
+      });
+    }
+
+    adddislikes(){
+
     }
 }

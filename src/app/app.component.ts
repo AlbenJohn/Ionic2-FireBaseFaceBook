@@ -22,8 +22,8 @@ interface AdMobType {
 })
 export class MyApp {
   @ViewChild(Nav) nav:Nav;
-  rootPage = LoginPage;
-   // rootPage = HomePage;
+  //rootPage = LoginPage;
+    rootPage = JokesPage;
   pages : Array<{title: string,component: any,icon: any}>
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,private admob: AdMob) {
 

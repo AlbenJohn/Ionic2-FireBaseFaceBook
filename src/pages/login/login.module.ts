@@ -5,6 +5,7 @@ import { HomePage } from '../home/home';
 import { Facebook } from '@ionic-native/facebook';
 import { DatePicker } from '@ionic-native/date-picker';
 import { RegisterPage } from '../register/register';
+import { UserdetailsProvider } from '../../providers/userdetails/userdetails';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { RegisterPage } from '../register/register';
     HomePage,
     DatePicker,
     RegisterPage,
+    UserdetailsProvider,
   ],
   imports: [
     IonicPageModule.forChild(LoginPage),
@@ -23,6 +25,7 @@ import { RegisterPage } from '../register/register';
     HomePage,
     DatePicker,
     RegisterPage,
+    UserdetailsProvider,
   ]
 })
 export class LoginPageModule {}

@@ -17,6 +17,7 @@ import { AddjokesPage } from '../pages/addjokes/addjokes';
 
 import { AngularFireModule } from 'angularFire2';
 import { AdMob } from '@ionic-native/admob';
+import { UserdetailsProvider } from '../providers/userdetails/userdetails';
 
  var config = {
     apiKey: "AIzaSyCWIcoASInNEMM5Zq5GxHbyjb39ukawh5E",
@@ -60,8 +61,10 @@ import { AdMob } from '@ionic-native/admob';
   providers: [
     StatusBar,
     SplashScreen,
+    UserdetailsProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AdMob
+    AdMob,
+    
   ]
 })
 export class AppModule {}
