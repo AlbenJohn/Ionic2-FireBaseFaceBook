@@ -21,8 +21,7 @@ emailid:string;
 user
   constructor(public navCtrl: NavController,public uddd:UserdetailsProvider,public fb: AngularFire) {
 
-    this.user = firebase.auth().currentUser.uid;
-
+  this.user = firebase.auth().currentUser.uid;
   this.userdetailslogin =   fb.database.object(`/userProfile/${this.user}`)
   .subscribe(userdetails => {
   this.username = userdetails.Name;

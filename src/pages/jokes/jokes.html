@@ -23,13 +23,17 @@ Jokes
 Jokes Page
 
 <ion-card color='light' *ngFor="let JokesArr of JokeList | async">
+
+
+  <!--<ion-card-content>{{JokesArr.$key}}</ion-card-content>-->
+
   <ion-card-content>{{JokesArr.Jokes}}</ion-card-content>
-  <button ion-button clear item-right icon-left small>
+  <button ion-button clear item-right icon-left small (click)="addLikes(JokesArr.$key,JokesArr.Likes)">
       <ion-icon name="thumbs-up"></ion-icon>
       likes {{JokesArr.Likes}}
     </button>
 
-    <button ion-button clear item-center icon-left small>
+    <button ion-button clear item-center icon-left small (click)="adddisLikes(JokesArr.$key,JokesArr.unlikes)">
       <ion-icon name="thumbs-down"></ion-icon>
       dislikes {{JokesArr.unlikes}}
     </button>

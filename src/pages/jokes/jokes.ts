@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AddjokesPage } from '../addjokes/addjokes';
 import { FIREBASE_PROVIDERS, defaultFirebase,AngularFire,FirebaseListObservable } from 'angularFire2';
-
+import firebase from 'firebase';
 /**
  * Generated class for the JokesPage page.
  *
@@ -16,16 +16,27 @@ import { FIREBASE_PROVIDERS, defaultFirebase,AngularFire,FirebaseListObservable 
 })
 export class JokesPage {
     JokeList: FirebaseListObservable<any>;
-
+    TotalLikes 
   constructor(public navCtrl: NavController, public navParams: NavParams,fb:AngularFire) {
 
-            this.JokeList = fb.database.list('/JokeList');
+        
+
+      this.JokeList = fb.database.list("/JokeList");
+        this.JokeList.forEach(element => {
+            console.log(element);
+            // this.TotalLikes = this.JokeList.$ref.on
+            // console.log("Totla Likes" + this.TotalLikes);
+
+        });
 
   }
-           convertoArray(val)
-           {
-           return Array.from(val);
-           }
+   convertoArray(val)
+     {
+       return Array.from(val);
+     }
+          
+
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad JokesPage');
   }
@@ -34,20 +45,32 @@ export class JokesPage {
              this.navCtrl.push(AddjokesPage);
     }
 
-    addLikes(){
-      //console.log(this.JokeList.Likes);
-this.JokeList.push({
-        Likes: 1,
-      
-      }).then( newContact => {
+    addLikes(Jokes , tot ){
+      //console.log("ijhnjskdj" + Jokes);
+      //console.log("ijhnjskdj" + tot);
+      var dsd = 1;
+      var sum = parseInt(tot) + dsd;
+      //console.log("ijhnjskdj" + sum);
+      this.JokeList.update(Jokes,{
+          Likes: sum,
+      }).then(newcontact => {
 
-
-      }, error => {
-       console.log(error);
       });
-    }
-
-    adddislikes(){
 
     }
+
+     adddisLikes(Jokes , tot ){
+      //console.log("ijhnjskdj" + Jokes);
+      //console.log("ijhnjskdj" + tot);
+      var dsd = 1;
+      var sum = parseInt(tot) + dsd;
+      //console.log("ijhnjskdj" + sum);
+      this.JokeList.update(Jokes,{
+          unlikes: sum,
+      }).then(newcontact => {
+
+      });
+
+    }
+
 }

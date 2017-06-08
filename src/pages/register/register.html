@@ -15,13 +15,46 @@
 
 <ion-content  padding>
 
-  <ion-card class="background">
+  <!--<ion-card class="background">
+
+    <ion-item ><div ><img class="image" src="../assets/icon/Profile_icon.png"></div></ion-item>
     <ion-item><ion-input class="input_type" type="text" [(ngModel)]="username" name="username" placeholder="username/emailid"></ion-input></ion-item>
     <ion-item><ion-input class="input_type" type="text" [(ngModel)]="password" name="password" placeholder="password"></ion-input></ion-item>
     <ion-item><ion-input class="input_type" type="text" name="confirm password" placeholder="confirm password"></ion-input></ion-item>
     <ion-item></ion-item>
      <button class="button_1" ion-button (click)="signupUser(username,password)" >Register</button>
 
-  </ion-card>
-
+  </ion-card>-->
+<div id="container_demo" >
+	<!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
+	<!--<ion-icon name="home"></ion-icon>-->
+	<div id="wrapper">
+		<div >
+				<h1></h1> 
+      <div>  <p><img id="image1" src="../assets/icon/Profile_icon.png"></p></div>
+				<p> 
+					<label for="usernamesignup" class="Name" data-icon="u" >Your username</label>
+					<input class="input_type" name="Name" [(ngModel)]="Name"  type="text" placeholder="mysuperusername690" />
+				</p>
+				<p> 
+					<label for="emailsignup" class="username" data-icon="e" > Your email</label>
+					<input class="input_type" name="username" [(ngModel)]="username"  type="text" placeholder="mysupermail@mail.com"/> 
+				</p>
+				<p> 
+					<label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label>
+					<input class="input_type" name="password" [(ngModel)]="password"  type="password" placeholder="eg. X8df!90EO"/>
+				</p>
+				<!--<p> 
+					<label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Please confirm your password </label>
+					<input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="eg. X8df!90EO"/>
+				</p>-->
+				<p class="signin button"> 
+					<input type="submit" value="Sign up" (click)="signupUser(Name,username,password)"/> 
+				</p>
+				
+		</div>
+		
+	</div>
+  
+</div>  
 </ion-content>

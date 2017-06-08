@@ -127,19 +127,16 @@ loginUser(email: string, password: string){
 facebookLoginfirebase(): void
 {
 this.fb.login(['email']).then( (response) => {
-      const facebookCredential = firebase.auth.FacebookAuthProvider
-        .credential(response.authResponse.accessToken);
-
+      const facebookCredential = firebase.auth.FacebookAuthProvider.credential(response.authResponse.accessToken);
       firebase.auth().signInWithCredential(facebookCredential)
         .then((success) => {
           console.log("Firebase success: " + JSON.stringify(success));
           this.userProfile = success;
-      firebase.database().ref('/userProfile').child(success.uid)
+                firebase.database().ref('/userProfile').child(success.uid)
                .set({ email: this.userProfile.email, image: this.userProfile.photoURL, Name: this.userProfile.displayName });
-          //this.uddd.getdetails(success)
+                    //this.uddd.getdetails(success)
                     console.log("Username email address jhjijkdnjknjfkd" + this.userProfile.email)
-
-         this.navCtrl.setRoot(HomePage);
+                    this.navCtrl.setRoot(HomePage);
 
         })
         .catch((error) => {
@@ -148,6 +145,12 @@ this.fb.login(['email']).then( (response) => {
 
     }).catch((error) => { console.log(error) });
   }
+
+
+forgotpassword(){
+  
+}
+
 /////Stoaring details into Database
 
 // _setUpUser(_credentials, _authData) {

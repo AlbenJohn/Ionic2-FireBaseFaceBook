@@ -22,8 +22,8 @@ interface AdMobType {
 })
 export class MyApp {
   @ViewChild(Nav) nav:Nav;
-  //rootPage = LoginPage;
-    rootPage = JokesPage;
+  rootPage = LoginPage;
+    //rootPage = JokesPage;
   pages : Array<{title: string,component: any,icon: any}>
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,private admob: AdMob) {
 
@@ -55,7 +55,7 @@ var admobid: AdMobType;
       this.admob.createBanner({
         adId: admobid.banner,
         position:admob.AD_POSITION.BOTTOM_CENTER,
-        //isTesting: true,//comment this out before publishing the app
+        isTesting: true,//comment this out before publishing the app
         autoShow: true
       })
       
